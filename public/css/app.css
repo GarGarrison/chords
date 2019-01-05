@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+body {
+    color: #e5e5e5;
+    background-image: url('/img/top.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', serif;
+    height: 100vh;
+    overflow: scroll;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+    font-style: normal;
+}
+h1 {
+    color: #795548;
+    font-size: 2.5rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+.head {
+    padding: 20px 0px;
+}
+
+.auth {
+    margin-top: 30px;
+    margin-right: 10px;
+    float: right;
+}
+.auth .button {
+    margin-left: 20px;
+}
+
+.title {
+    color: #a1887f;
+    font-size: 4rem;
+    font-family: 'Bangers';
+}
+/*.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}*/
+.conteiner {
+    height: 100vh;
+}
+.button {
+    color: #636b6f;
+    font-size: 1.1rem;
+    padding: 0.4rem 1.7rem;
+    border-radius: 3px;
+    -webkit-box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.75);
+    box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.75);
+    justify-content: center;
+    cursor: pointer;
+}
+.button.grey {
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(168,168,168,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(255,255,255,1) 0%, rgba(168,168,168,1) 100%);
+}
+.button.grey:hover {
+    background: -moz-linear-gradient(top, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(168,168,168,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(168,168,168,1) 0%, rgba(255,255,255,1) 100%);
+}
+.button.brown {
+    background: -moz-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(182,141,76,1)), color-stop(0%, rgba(99,64,30,1)), color-stop(0%, rgba(77,43,38,1)), color-stop(0%, rgba(121,85,72,1)), color-stop(100%, rgba(71,55,49,1)));
+    background: -webkit-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -o-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -ms-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: linear-gradient(to bottom, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    color: #e5e5e5;
+}
+.button.brown:hover {
+    background: -moz-linear-gradient(top, rgba(71,55,49,1) 0%, rgba(121,85,72,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(71,55,49,1)), color-stop(100%, rgba(121,85,72,1)));
+    background: -webkit-linear-gradient(top, rgba(71,55,49,1) 0%, rgba(121,85,72,1) 100%);
+    background: -o-linear-gradient(top, rgba(71,55,49,1) 0%, rgba(121,85,72,1) 100%);
+    background: -ms-linear-gradient(top, rgba(71,55,49,1) 0%, rgba(121,85,72,1) 100%);
+    background: linear-gradient(to bottom, rgba(71,55,49,1) 0%, rgba(121,85,72,1) 100%);
+}
+
+.search {
+    margin-top: 20px;
+}
+.search input {
+    display: block;
+    width: 100%;
+    color: #e5e5e5;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.7rem;
+    border: none;
+    border-radius: 3px;
+    background: -moz-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(182,141,76,1)), color-stop(0%, rgba(99,64,30,1)), color-stop(0%, rgba(77,43,38,1)), color-stop(0%, rgba(121,85,72,1)), color-stop(100%, rgba(71,55,49,1)));
+    background: -webkit-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -o-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: -ms-linear-gradient(top, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+    background: linear-gradient(to bottom, rgba(182,141,76,1) 0%, rgba(99,64,30,1) 0%, rgba(77,43,38,1) 0%, rgba(121,85,72,1) 0%, rgba(71,55,49,1) 100%);
+
+    -webkit-box-shadow: -1px 1px 16px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 1px 16px -1px rgba(0,0,0,0.75);
+box-shadow: -1px 1px 16px -1px rgba(0,0,0,0.75);
+}
+.search input:focus {
+    border: #795548;
+    outline: none !important;
+}
+
+.menu-item {
+    margin-right: 20px;
+    float: left;    
+}
+.letters a {
+    color: #e5e5e5;
+    float: left;
+    margin: 0px 2px;
+    text-decoration: underline;
+}
+.song {
+    color: #333;
+    border-radius: 5px;
+    padding: 4rem;
+    background: rgb(229, 229, 229);
+    background: rgba(229, 229, 229, 0.88);
+    -webkit-box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.88);
+    -moz-box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.88);
+    box-shadow: -1px 6px 35px -4px rgba(0,0,0,0.88);
+}
+.song b {
+    color: #795548;
+}
