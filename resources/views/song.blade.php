@@ -1,44 +1,17 @@
 @extends('app')
 
+@section("title")
+<title>{{ $song->artist }} - {{ $song->title }}</title>
+@endsection
+
 @section('content')
-    <div class="song">
-        <h1>Валентин Стрыкало - Подрочу и лягу спать</h1>
+    <div class="block bottom song">
+        <div class="bread">
+          <a href='{{ "/artist/{$artist->url}" }}'><i class="material-icons left">undo</i>назад к «{{ $artist->name }}»</a>
+        </div>
+        <h1>{{ $song->artist_name }} - {{ $song->title }}</h1>
         <pre>
-<b>G</b>                     <b>D</b>
-Пятница вечер, на вечеринку
-<b>Em</b>                    <b>C</b>
-Собираются друзья мои
-<b>G</b>                      <b>D</b>
-Там они будут, все веселиться
-<b>Em</b>             <b>C</b>
-И меня они зовут пойти
-<b>D</b>                <b>C</b>              <b>D</b>   
-Но мне так лень, подбирать прикиды
-             <b>C</b>              <b>D</b>     
-Кофту гладить, штаны стирать
-       <b>C</b>             <b>D</b>   
-Сори парни, без обид но
-         <b>C</b>         
-Лучше я, 
- 
-                        <b>G</b>             
-Подрочу и лягу спать
-        <b>D</b>     <b>Em</b>    
-Подрочу и лягу
-         <b>C</b>        <b>G</b>            
-И не буду тусовать
-         <b>D</b>    <b>Em</b>    
-Нахуй это надо, 
-          <b>C</b>                <b>G</b>              
-Подрочу и лягу спать
-           <b>D</b>        <b>Em</b>        
-Мне плевать на это, 
-          <b>C</b>           <b>G</b>            
-Я расставил для себя
-         <b>D</b>       <b>Em</b>  
-Все приоритеты
-        <b>C</b>            <b>G</b>        
-Подрочу и лягу спать
-</pre>
+        {!! $song->text !!}
+        </pre>
     </div>
 @endsection

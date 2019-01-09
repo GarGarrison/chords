@@ -3,65 +3,104 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        @section("title")
         <title>CheckTheChords.ru</title>
-        <link href="libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
-        <link href="css/app.css" rel="stylesheet" type="text/css">
+        @show
+        <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="head">
-                    <span class="title">CheckTheChords.ru</span>
-                    <div class="auth">
-                        <div class="button brown left">Вход</div>
-                        <div class="button brown left">Регистрация</div>
-                    </div>
+            <div class="row head">
+                <div class="col s12 m6">
+                    <a href="/" class="title">CheckTheChords.ru</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="menu">
-                    <div class="menu-item button grey">Аккорды</div>
+                <!-- <div class="col s12 l6 auth">
+                    <div class="button brown left">Вход</div>
+                    <div class="button brown left">Регистрация</div>
+                </div> -->
+                <div class="col s12 m6 menu">
                     <div class="menu-item button grey">Исполнители</div>
+                    <div class="menu-item button grey">Аккорды</div>
                 </div>
             </div>
             <div class="row">
                 <div class="letters">
-                    <a href="/letters/A">A</a>
-                    <a href="/letters/B">B</a>
-                    <a href="/letters/C">C</a>
-                    <a href="/letters/D">D</a>
-                    <a href="/letters/E">E</a>
-                    <a href="/letters/F">F</a>
-                    <a href="/letters/G">G</a>
-                    <a href="/letters/H">H</a>
-                    <a href="/letters/I">I</a>
-                    <a href="/letters/J">J</a>
-                    <a href="/letters/K">K</a>
-                    <a href="/letters/L">L</a>
-                    <a href="/letters/M">M</a>
-                    <a href="/letters/N">N</a>
-                    <a href="/letters/O">O</a>
-                    <a href="/letters/P">P</a>
-                    <a href="/letters/Q">Q</a>
-                    <a href="/letters/R">R</a>
-                    <a href="/letters/S">S</a>
-                    <a href="/letters/T">T</a>
-                    <a href="/letters/U">U</a>
-                    <a href="/letters/V">V</a>
-                    <a href="/letters/W">W</a>
-                    <a href="/letters/X">X</a>
-                    <a href="/letters/Y">Y</a>
-                    <a href="/letters/Z">Z</a>
+                    <a href="/letter/A">A</a>
+                    <a href="/letter/B">B</a>
+                    <a href="/letter/C">C</a>
+                    <a href="/letter/D">D</a>
+                    <a href="/letter/E">E</a>
+                    <a href="/letter/F">F</a>
+                    <a href="/letter/G">G</a>
+                    <a href="/letter/H">H</a>
+                    <a href="/letter/I">I</a>
+                    <a href="/letter/J">J</a>
+                    <a href="/letter/K">K</a>
+                    <a href="/letter/L">L</a>
+                    <a href="/letter/M">M</a>
+                    <a href="/letter/N">N</a>
+                    <a href="/letter/O">O</a>
+                    <a href="/letter/P">P</a>
+                    <a href="/letter/Q">Q</a>
+                    <a href="/letter/R">R</a>
+                    <a href="/letter/S">S</a>
+                    <a href="/letter/T">T</a>
+                    <a href="/letter/U">U</a>
+                    <a href="/letter/V">V</a>
+                    <a href="/letter/W">W</a>
+                    <a href="/letter/X">X</a>
+                    <a href="/letter/Y">Y</a>
+                    <a href="/letter/Z">Z</a>
+                    <a href="/letter/0-9">0-9</a>
+                </div>
+                <div class="letters">
+                    <a href="/letter/А">А</a>
+                    <a href="/letter/Б">Б</a>
+                    <a href="/letter/В">В</a>
+                    <a href="/letter/Г">Г</a>
+                    <a href="/letter/Д">Д</a>
+                    <a href="/letter/Е">Е</a>
+                    <a href="/letter/Ё">Ё</a>
+                    <a href="/letter/Ж">Ж</a>
+                    <a href="/letter/З">З</a>
+                    <a href="/letter/И">И</a>
+                    <a href="/letter/Й">Й</a>
+                    <a href="/letter/К">К</a>
+                    <a href="/letter/Л">Л</a>
+                    <a href="/letter/М">М</a>
+                    <a href="/letter/Н">Н</a>
+                    <a href="/letter/О">О</a>
+                    <a href="/letter/П">П</a>
+                    <a href="/letter/Р">Р</a>
+                    <a href="/letter/С">С</a>
+                    <a href="/letter/Т">Т</a>
+                    <a href="/letter/У">У</a>
+                    <a href="/letter/Ф">Ф</a>
+                    <a href="/letter/Х">Х</a>
+                    <a href="/letter/Ц">Ц</a>
+                    <a href="/letter/Ч">Ч</a>
+                    <a href="/letter/Ш">Ш</a>
+                    <a href="/letter/Щ">Щ</a>
+                    <a href="/letter/Ъ">Ъ</a>
+                    <a href="/letter/Ы">Ы</a>
+                    <a href="/letter/Ь">Ь</a>
+                    <a href="/letter/Э">Э</a>
+                    <a href="/letter/Ю">Ю</a>
+                    <a href="/letter/Я">Я</a>
+                    <a href="/letter/0-9">0-9</a>
                 </div>
             </div>
             <div class="row">
-                <div class="search">
+                <form class="search" action="/search">
                     <input class="browser-default" type="text" name="search" placeholder="Поиск">
-                </div>
+                </form>
             </div>
             <div class="row">
                 <div class="content">
                     @yield('content')
+                    <div class="footer"></div>
                 </div>
             </div>
             <!-- <div class="content">

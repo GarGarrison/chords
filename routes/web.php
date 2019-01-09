@@ -12,4 +12,12 @@
 */
 
 Route::get('/', 'MainController@index');
-Route::get('/song', 'MainController@song');
+Route::get('/news', 'MainController@news');
+Route::get('/popular', 'MainController@popular');
+Route::get('/search', 'MainController@search');
+Route::get('/artist/{artist}', 'MainController@artist');
+Route::get('/letter/{letter}', 'MainController@letter');
+
+Route::get('/ololo', 'AdminController@admin');
+
+Route::get('/{song}', 'MainController@song');

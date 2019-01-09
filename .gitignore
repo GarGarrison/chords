@@ -1,9 +1,11 @@
+/__pycache__
 /node_modules
 /public/hot
 /public/storage
 /public/img
 /public/libs
 /storage/*.key
+/util
 /vendor
 .env
 .phpunit.result.cache
