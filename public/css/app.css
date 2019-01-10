@@ -39,6 +39,12 @@ table a {
     color: #333;
 }
 
+pre {
+    /*word-wrap: break-word;
+    white-space: pre-wrap;*/
+    padding: 0px 2px;
+}
+
 .head {
     padding: 20px 0px;
 }
@@ -177,6 +183,11 @@ table a {
     border-bottom-right-radius: 0px;
 }
 
+.block.complex {
+    margin-bottom: 1rem;
+    padding: 5px 1.5rem;
+}
+
 .bread {
     margin: 30px 0px;
 }
@@ -207,10 +218,16 @@ table a {
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        background-image: url('/img/top_mini.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .container {
         width: 100%;
     }
     .block {
         padding: 5px 1rem;
+        border-radius: 0px;
     }
 }

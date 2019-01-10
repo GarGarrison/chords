@@ -1,7 +1,9 @@
 @extends('app')
 
-@section("title")
-<title>{{ $song->artist }} - {{ $song->title }}</title>
+@section('meta')
+<title>{{ $song->artist_name }} - {{ $song->title }} | аккорды для гитары, текст песни</title>
+<meta name="Keywords" content="{{ $song->artist_name }},{{ $song->title }},аккорды для гитары, текст песни"/>
+<meta name="Description" content="{{ $song->artist_name }} - {{ $song->title }} | аккорды для гитары, текст песни"/>
 @endsection
 
 @section('content')

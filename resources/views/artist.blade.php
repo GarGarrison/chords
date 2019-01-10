@@ -1,5 +1,11 @@
 @extends('app')
 
+@section('meta')
+<title>{{ $artist->name }} - аккорды для гитары, текст песен</title>
+<meta name="Keywords" content="{{ $artist->name }}, аккорды для гитары, текст песен"/>
+<meta name="Description" content="{{ $artist->name }} - аккорды для гитары, текст песен"/>
+@endsection
+
 @section('content')
     <div class="block bottom">
         <h1>{{ $artist->name }}</h1>
@@ -14,7 +20,7 @@
                 <tr>
                     <td></td><!-- ava -->
                     <td><a href='{{"/{$song->url}" }}'>{{ $song->title }}</a></td>
-                    <td>10</td>
+                    <td>{{ $song->view }}</td>
                 </tr>
             @endforeach
             </table>

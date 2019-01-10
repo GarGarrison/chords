@@ -13,13 +13,19 @@ use App\Artist;
 class MainController extends Controller
 {
     public function index(Request $request) {
-        return view('index');
+        $top_artists = DB::table('artists')
+                        ->leftJoin('songs', 'artists.id', '=', 'songs.artist_id')
+                        ->select('artists.*', DB::raw('count(artists.id) as songs_sum'))
+                        ->groupBy('artists.id')
+                        ->orderBY("songs_sum", "desc")->take(7)->get();
+        $top_songs = Song::orderBY("view","desc")->take(7)->get();
+        $new_songs = Song::orderBY("created_at","desc")->simplePaginate(20);
+        return view('index', ["top_artists"=>$top_artists, "top_songs"=>$top_songs, "new_songs"=>$new_songs]);
     }
 
     public function search(Request $request) {
         $req = $request->input('search');
         $lower = strtolower($req);
-        // $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', title)) like '%{strtolower($req)}%'")->paginate(20);
         $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', title)) like '%{$lower}%'")->paginate(20);
         return view('search', ["results"=>$results, "request"=>$req]);
     }
@@ -27,11 +33,12 @@ class MainController extends Controller
     public function song(Request $request, $url) {
         $song = Song::where('url', $url)->firstOrFail();
         $artist = Artist::find($song->artist_id);
+        $song->view += 1;
+        $song->save();
         return view('song', ["artist"=>$artist, "song"=>$song]);
     }
 
     public function letter(Request $request, $letter) {
-        // $artists = Artist::where('letter', $letter)->orderBY("name")->paginate(20);
         $artists = DB::table('artists')
             ->where('letter', $letter)
             ->leftJoin('songs', 'artists.id', '=', 'songs.artist_id')

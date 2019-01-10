@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @section("title")
-        <title>CheckTheChords.ru</title>
+        @section('meta')
+        <title>CheckTheChords.ru - тексты песен и аккорды для гитары</title>
+        <meta name="Keywords" content="аккорды тексты песен подборы для гитары укулеле"/>
+        <meta name="Description" content="Тексты песен, аккорды для гитары"/>
         @show
         <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

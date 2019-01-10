@@ -29,6 +29,7 @@ class DBApi(object):
         st = st.replace( ' ', '-' )
         st = st.replace( '/', '' )
         st = st.replace( '%', '' )
+        st = st.replace( '?', '' )
         st = st.replace( '"', '' )
         st = st.replace( "'", '' )
         st = st.replace( '_', '-' )
