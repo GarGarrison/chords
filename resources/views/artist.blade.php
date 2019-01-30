@@ -1,14 +1,14 @@
 @extends('app')
 
 @section('meta')
-<title>{{ $artist->name }} - аккорды для гитары, текст песен</title>
-<meta name="Keywords" content="{{ $artist->name }}, аккорды для гитары, текст песен"/>
-<meta name="Description" content="{{ $artist->name }} - аккорды для гитары, текст песен"/>
+<title>{{ $artist->artist_name }} - аккорды для гитары, текст песен</title>
+<meta name="Keywords" content="{{ $artist->artist_name }}, аккорды для гитары, текст песен"/>
+<meta name="Description" content="{{ $artist->artist_name }} - аккорды для гитары, текст песен"/>
 @endsection
 
 @section('content')
     <div class="block bottom">
-        <h1>{{ $artist->name }}</h1>
+        <h1>{{ $artist->artist_name }}</h1>
         @if(count($songs))
             <table>
                 <tr>
@@ -19,7 +19,7 @@
             @foreach($songs as $song)
                 <tr>
                     <td></td><!-- ava -->
-                    <td><a href='{{"/{$song->url}" }}'>{{ $song->title }}</a></td>
+                    <td><a href='{{"/{$song->url}" }}'>{{ $song->song_name }}</a></td>
                     <td>{{ $song->view }}</td>
                 </tr>
             @endforeach

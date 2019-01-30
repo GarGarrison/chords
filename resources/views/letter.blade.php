@@ -13,7 +13,7 @@
             @foreach($artists as $artist)
                 <tr>
                     <td></td><!-- ava -->
-                    <td><a href='{{ "/artist/{$artist->url}" }}'>{{ $artist->name }}</a></td>
+                    <td><a href='{{ "/artist/{$artist->url}" }}'>{{ $artist->artist_name }}</a></td>
                     <td>{{ $artist->songs_sum }}</td>
                 </tr>
             @endforeach

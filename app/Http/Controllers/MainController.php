@@ -26,7 +26,7 @@ class MainController extends Controller
     public function search(Request $request) {
         $req = $request->input('search');
         $lower = strtolower($req);
-        $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', title)) like '%{$lower}%'")->paginate(20);
+        $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', song_name)) like '%{$lower}%'")->paginate(20);
         return view('search', ["results"=>$results, "request"=>$req]);
     }
 
@@ -44,14 +44,14 @@ class MainController extends Controller
             ->leftJoin('songs', 'artists.id', '=', 'songs.artist_id')
             ->select('artists.*', DB::raw('count(artists.id) as songs_sum'))
             ->groupBy('artists.id')
-            ->orderBY("name")
+            ->orderBY("artist_name")
             ->paginate(50);
         return view('letter', ["artists"=>$artists, "letter"=>$letter]);
     }
 
     public function artist(Request $request, $url) {
         $artist = Artist::where('url', $url)->firstOrFail();
-        $songs = Song::where('artist_id', $artist->id)->orderBY("title")->paginate(50);
+        $songs = Song::where('artist_id', $artist->id)->orderBY("song_name")->paginate(50);
         return view('artist', ["songs"=>$songs, "artist"=>$artist]);
     }
 }

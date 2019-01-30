@@ -13,7 +13,7 @@
                         </tr>
                     @foreach($top_artists as $artist)
                         <tr>
-                            <td><a href='{{"/artist/{$artist->url}" }}'>{{ $artist->name }}</a></td>
+                            <td><a href='{{"/artist/{$artist->url}" }}'>{{ $artist->artist_name }}</a></td>
                             <td>{{ $artist->songs_sum }}</td>
                         </tr>
                     @endforeach
@@ -27,12 +27,12 @@
                 @if(count($top_songs))
                     <table>
                         <tr>
-                            <th>Исполнитель</th>
+                            <th>Песня</th>
                             <th>Просмотров</th>
                         </tr>
                     @foreach($top_songs as $song)
                         <tr>
-                            <td><a href='{{"/{$song->url}" }}'>{{ $song->artist_name }} - {{ $song->title }}</a></td>
+                            <td><a href='{{"/{$song->url}" }}'>{{ $song->artist_name }} - {{ $song->song_name }}</a></td>
                             <td>{{ $song->view }}</td>
                         </tr>
                     @endforeach
@@ -54,7 +54,7 @@
                     @foreach($new_songs as $song)
                         <tr>
                             <td>{{ $song->artist_name }}</td>
-                            <td><a href='{{ "/{$song->url}" }}'>{{ $song->title }}</a></td>
+                            <td><a href='{{ "/{$song->url}" }}'>{{ $song->song_name }}</a></td>
                         </tr>
                     @endforeach
                     </table>

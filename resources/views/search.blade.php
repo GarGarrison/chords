@@ -12,7 +12,7 @@
             @foreach($results as $result)
                 <tr>
                     <td></td><!-- ava -->
-                    <td><a href='{{"/{$result->url}" }}'>{{ $result->artist_name }} - {{ $result->title }}</a></td>
+                    <td><a href='{{"/{$result->url}" }}'>{{ $result->artist_name }} - {{ $result->song_name }}</a></td>
                 </tr>
             @endforeach
             </table>

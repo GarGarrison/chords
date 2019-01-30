@@ -17,8 +17,8 @@ class CreateSongsTable extends Migration
             $table->increments('id');
             $table->integer('artist_id')->unsigned();
             $table->string('artist_name');
-            $table->string('title');
-            $table->text('text');
+            $table->string('song_name');
+            $table->text('chords_txt');
             $table->string('url')->unique();
             $table->string('video')->unique()->nullable();
             $table->string('chords')->nullable();
