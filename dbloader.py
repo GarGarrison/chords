@@ -34,7 +34,7 @@ def read_old():
     for index, row in df_content.iterrows():
         url = row["URL"]
         data = songs[url]
-        data["chords_txt"] = row["Content"].replace("_x000D_", "")
+        data["chords_txt"] = row["Content"].replace("_x000D_", "").replace("<div>", "").replace("</div>", "").replace("<br>", "")
         try:
             db.insert_artist(data)
             newurl = db.insert_song(data)
