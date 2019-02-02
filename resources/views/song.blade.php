@@ -20,6 +20,9 @@
           <a href='{{ "/artist/{$artist->url}" }}'><i class="material-icons left">undo</i>назад к «{{ $artist->artist_name }}»</a>
         </div>
         <h1>{{ $song->artist_name }} - {{ $song->song_name }}</h1>
+        @if($song->video)
+        {!! $song->video !!}
+        @endif
         <pre>
         {!! $song->chords_txt !!}
         </pre>

@@ -5,7 +5,7 @@ import os
 import json
 import pandas
 import warnings
-
+import re
 from dbapi import DBApi
 
 # OLD_LINKS = "/home/garrison/Cloud/work/chords/util/export-post-2019-01-12_19-48-44.csv"
@@ -19,6 +19,8 @@ OUT_DIR = '/home/garrison/Cloud/work/chords/util/data_in_db'
 db = DBApi()
 
 def read_old():
+    r = re.compile("<iframe.*>.*</iframe?>")
+    r_div = re.compile("<div.*?>")
     df_content = pandas.read_csv(OLD_CONTENT)
     df_artist = pandas.read_csv(OLD_ARTIST)
     songs = {}
@@ -34,7 +36,11 @@ def read_old():
     for index, row in df_content.iterrows():
         url = row["URL"]
         data = songs[url]
-        data["chords_txt"] = row["Content"].replace("_x000D_", "").replace("<div>", "").replace("</div>", "").replace("<br>", "")
+        content = row["Content"]
+        if r.findall(content): data["video"] = r.findall(content)[0]
+        content = re.sub(r, '', content).strip()
+        content = re.sub(r_div, '', content).strip()
+        data["chords_txt"] = content.replace("_x000D_", "").replace("</div>", "").replace("<br>", "")
         try:
             db.insert_artist(data)
             newurl = db.insert_song(data)
