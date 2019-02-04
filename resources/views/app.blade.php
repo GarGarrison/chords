@@ -11,6 +11,7 @@
         <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
+        @include('vendor.vendorjs')
     </head>
     <body>
         <div class="container">
