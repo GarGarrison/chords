@@ -18,6 +18,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    RewriteCond %{HTTP:HTTPS} !=on [NC]
+    RewriteCond %{HTTP:X-Forwarded-Proto} ^http$
+    RewriteRule ^(.*)$ https://checkthechords.ru$1 [R=301,L]
 </IfModule>
 
 Redirect 301 /alai-oli https://checkthechords.ru/artist/alai-oli
