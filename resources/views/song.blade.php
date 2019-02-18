@@ -21,7 +21,7 @@
         </div>
         <h1>{{ $song->artist_name }} - {{ $song->song_name }}</h1>
         @if($song->video)
-        {!! $song->video !!}
+        <iframe src="https://www.youtube.com/embed/{{ $song->video }}?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
         @endif
         <pre>
         {!! $song->chords_txt !!}
