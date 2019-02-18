@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="content">
                     @yield('content')
-                    <div class="footer"></div>
+                    <div class="footer"><div class="grey-text text-lighten-1" align="center">© 2017–<?php echo date('Y')?>&nbsp; CheckTheChords.ru</div></div>
                 </div>
             </div>
             <!-- <div class="content">

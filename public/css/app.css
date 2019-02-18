@@ -10,7 +10,7 @@ body {
     background-attachment: fixed;
     font-family: 'Roboto', serif;
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 0px;
     margin: 0px;
 }
@@ -70,6 +70,10 @@ pre {
 }*/
 .container {
     height: 100vh;
+}
+
+.content iframe {
+	max-width: 100%;
 }
 
 .button {
@@ -204,7 +208,7 @@ pre {
 }
 
 .footer {
-    height: 50px;
+    min-height: 50px;
     width: 100%;
     color: #333;
     border-bottom-left-radius: 5px;
@@ -218,11 +222,17 @@ pre {
 }
 
 @media only screen and (max-width: 600px) {
-    body {
+	
+	body {
         background-image: url('/img/top_mini.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+		height: 100%;
     }
+	
+	.title {
+		font-size: 3.2rem;
+	}
     .container {
         width: 100%;
     }

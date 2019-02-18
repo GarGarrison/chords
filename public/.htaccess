@@ -1,27 +1,40 @@
-<IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+Options -MultiViews -Indexes
 
-    RewriteEngine On
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+	RewriteBase / 
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-    # Redirect Trailing Slashes If Not A Folder...
+	
+	# Редирект с www на без www (с удалением слеша на конце)
+	RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	RewriteRule ^(.*)(/)$ https://%1/$1 [R=301,L]
+	
+	# Редирект с www на без www
+	RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+	
+	# Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%1 [R=301,L]
+	
+	# Перенаправление с http на https 
+	RewriteCond %{HTTPS} off
+	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
-
-    RewriteCond %{HTTP:HTTPS} !=on [NC]
-    RewriteCond %{HTTP:X-Forwarded-Proto} ^http$
-    RewriteRule ^(.*)$ https://checkthechords.ru$1 [R=301,L]
+    RewriteRule ^(.*)$ index.php [L]
+   
+    
 </IfModule>
 
 Redirect 301 /alai-oli https://checkthechords.ru/artist/alai-oli
@@ -225,3 +238,115 @@ Redirect 301 /grob-egor-letov-mertvye https://checkthechords.ru/grazhdanskaja-ob
 Redirect 301 /loc-dog-lubit-nebo https://checkthechords.ru/loc-dog-ljubit-nebo
 Redirect 301 /mumij-troll-zabavy https://checkthechords.ru/mumij-troll-zabavi
 Redirect 301 /sektor-gaza-kolhoznyj-pank https://checkthechords.ru/sektor-gaza-kolhoznij-pank
+#cut slash
+Redirect 301 /sektor-gaza-voj-na-lunu/ https://checkthechords.ru/sektor-gaza-voj-na-lunu
+Redirect 301 /sektor-gaza-svidanie/ https://checkthechords.ru/sektor-gaza-svidanie
+Redirect 301 /loc-dog-strela/ https://checkthechords.ru/loc-dog-strela
+Redirect 301 /sektor-gaza-life/ https://checkthechords.ru/sektor-gaza-life
+Redirect 301 /sektor-gaza-ukus-vampira/ https://checkthechords.ru/sektor-gaza-ukus-vampira
+Redirect 301 /loc-dog-udacha-nam-k-licu/ https://checkthechords.ru/loc-dog-udacha-nam-k-licu
+Redirect 301 /sektor-gaza-pesenka/ https://checkthechords.ru/sektor-gaza-pesenka
+Redirect 301 /sektor-gaza-utoplennik/ https://checkthechords.ru/sektor-gaza-utoplennik
+Redirect 301 /anacondaz-angel/ https://checkthechords.ru/anacondaz-angel
+Redirect 301 /sektor-gaza-tuman/ https://checkthechords.ru/sektor-gaza-tuman
+Redirect 301 /jahmal-tgk-kapelka-dobra/ https://checkthechords.ru/jahmal-tgk-kapelka-dobra
+Redirect 301 /kirpichi-bajka/ https://checkthechords.ru/kirpichi-bajka
+Redirect 301 /anacondaz-poezda/ https://checkthechords.ru/anacondaz-poezda
+Redirect 301 /kino-trankvilizator/ https://checkthechords.ru/kino-trankvilizator
+Redirect 301 /kino-boshetunmaj/ https://checkthechords.ru/kino-boshetunmaj
+Redirect 301 /kino-selva/ https://checkthechords.ru/kino-selva
+Redirect 301 /kino-bezdelnik/ https://checkthechords.ru/kino-bezdelnik
+Redirect 301 /kino-vosmiklassnica/ https://checkthechords.ru/kino-vosmiklassnica
+Redirect 301 /kino-moe-nastroenie/ https://checkthechords.ru/kino-moe-nastroenie
+Redirect 301 /kino-gorod/ https://checkthechords.ru/kino-gorod
+Redirect 301 /kino-zakroj-za-mnoj-dver/ https://checkthechords.ru/kino-zakroj-za-mnoj-dver
+Redirect 301 /kino-videli-noch/ https://checkthechords.ru/kino-videli-noch
+Redirect 301 /kino-na-kuhne/ https://checkthechords.ru/kino-na-kuhne
+Redirect 301 /kino-muravejnik/ https://checkthechords.ru/kino-muravejnik
+Redirect 301 /kino-ya-idu-po-ulice/ https://checkthechords.ru/kino-ja-idu-po-ulice
+Redirect 301 /kino-progulka-romantika/ https://checkthechords.ru/kino-progulka-romantika
+Redirect 301 /kino-ataman/ https://checkthechords.ru/kino-ataman
+Redirect 301 /kino-zvezda-po-imeni-solnce/ https://checkthechords.ru/kino-zvezda-po-imeni-solnce
+Redirect 301 /serga-chto-nam-nado/ https://checkthechords.ru/serga-chto-nam-nado
+Redirect 301 /kino-derevo/ https://checkthechords.ru/kino-derevo
+Redirect 301 /kino-elektrichka/ https://checkthechords.ru/kino-elektrichka
+Redirect 301 /kino-sitar-igral/ https://checkthechords.ru/kino-sitar-igral
+Redirect 301 /sektor-gaza-java/ https://checkthechords.ru/sektor-gaza-java
+Redirect 301 /kino-ver-mne/ https://checkthechords.ru/kino-ver-mne
+Redirect 301 /kino-uhodi/ https://checkthechords.ru/kino-uhodi
+Redirect 301 /kino-vesna/ https://checkthechords.ru/kino-vesna
+Redirect 301 /kino-sasha/ https://checkthechords.ru/kino-sasha
+Redirect 301 /kino-nam-s-toboj/ https://checkthechords.ru/kino-nam-s-toboj
+Redirect 301 /alai-oli-sneg-i-pepel/ https://checkthechords.ru/alai-oli-sneg-i-pepel
+Redirect 301 /mumij-troll-skorost/ https://checkthechords.ru/mumij-troll-skorost
+Redirect 301 /naiv-utro/ https://checkthechords.ru/naiv-utro
+Redirect 301 /sektor-gaza-narkoman/ https://checkthechords.ru/sektor-gaza-narkoman
+Redirect 301 /noize-mc-leto-v-stolice/ https://checkthechords.ru/noize-mc-leto-v-stolice
+Redirect 301 /kino-sledi-za-toboj/ https://checkthechords.ru/kino-sledi-za-toboj
+Redirect 301 /anacondaz-privet-gitler/ https://checkthechords.ru/anacondaz-privet-gitler
+Redirect 301 /osobyj-rezon/ https://checkthechords.ru
+Redirect 301 /kino-vopros/ https://checkthechords.ru/kino-vopros
+Redirect 301 /kino-anasha/ https://checkthechords.ru/kino-anasha
+Redirect 301 /kino-vojna/ https://checkthechords.ru/kino-vojna
+Redirect 301 /kino-gruppa-krovi/ https://checkthechords.ru/kino-gruppa-krovi
+Redirect 301 /kino-razreshi-mne/ https://checkthechords.ru/kino-razreshi-mne
+Redirect 301 /kino-ranshe-v-tvoih-glazah/ https://checkthechords.ru/kino-ranshe-v-tvoih-glazah
+Redirect 301 /kino-kazhduju-noch/ https://checkthechords.ru/kino-kazhduju-noch
+Redirect 301 /kino-v-nashih-glazah/ https://checkthechords.ru/kino-v-nashih-glazah
+Redirect 301 /mumij-troll-takie-devchonki/ https://checkthechords.ru/mumij-troll-takie-devchonki
+Redirect 301 /placebo-meds/ https://checkthechords.ru/placebo-meds
+Redirect 301 /mumij-troll-fantastika/ https://checkthechords.ru/mumij-troll-fantastika
+Redirect 301 /kino-skazka/ https://checkthechords.ru/kino-skazka
+Redirect 301 /kino-kamchatka/ https://checkthechords.ru/kino-kamchatka
+Redirect 301 /kino-poslednij-geroj/ https://checkthechords.ru/kino-poslednij-geroj
+Redirect 301 /kino-stuk/ https://checkthechords.ru/kino-stuk
+Redirect 301 /kino-hochu-peremen/ https://checkthechords.ru/kino-hochu-peremen
+Redirect 301 /kino-zavtra-vojna/ https://checkthechords.ru/kino-zavtra-vojna
+Redirect 301 /kino-okolo-semi-utra/ https://checkthechords.ru/kino-okolo-semi-utra
+Redirect 301 /kino-prosnis/ https://checkthechords.ru/kino-prosnis
+Redirect 301 /kino-noch/ https://checkthechords.ru/kino-noch
+Redirect 301 /knaan-waving-flag/ https://checkthechords.ru/knaan-waving-flag
+Redirect 301 /the-beatles-yesterday/ https://checkthechords.ru/the-beatles-yesterday
+Redirect 301 /loc-dog-zhanna-friske/ https://checkthechords.ru/loc-dog-zhanna-friske
+Redirect 301 /kino-kukushka/ https://checkthechords.ru/kino-kukushka
+Redirect 301 /kino-aprel/ https://checkthechords.ru/kino-aprel
+Redirect 301 /ahra-karie-glaza/ https://checkthechords.ru/ahra-karie-glaza
+Redirect 301 /noize-mc-dozhd/ https://checkthechords.ru/noize-mc-dozhd
+Redirect 301 /noize-mc-iz-okna/ https://checkthechords.ru/noize-mc-iz-okna
+Redirect 301 /noize-mc-moe-more/ https://checkthechords.ru/noize-mc-moe-more
+Redirect 301 /noize-mc-grabli/ https://checkthechords.ru/noize-mc-grabli
+Redirect 301 /noize-mc-zhvachka/ https://checkthechords.ru/noize-mc-zhvachka
+Redirect 301 /noize-mc-jameson/ https://checkthechords.ru/noize-mc-jameson
+Redirect 301 /mumij-troll-vladivostok-2000/ https://checkthechords.ru/mumij-troll-vladivostok-2000
+Redirect 301 /oxxxymiron-tam-gde-nas-net/ https://checkthechords.ru/oxxxymiron-tam-gde-nas-net
+Redirect 301 /kino-zvezda/ https://checkthechords.ru/kino-zvezda
+Redirect 301 /kino-tanec/ https://checkthechords.ru/kino-tanec
+Redirect 301 /kino-gost/ https://checkthechords.ru/kino-gost
+Redirect 301 /loc-dog-mimo-not/ https://checkthechords.ru/loc-dog-mimo-not
+Redirect 301 /kino-pora/ https://checkthechords.ru/kino-pora
+Redirect 301 /kino-pachka-sigaret/ https://checkthechords.ru/kino-pachka-sigaret
+Redirect 301 /mumij-troll-utekaj/ https://checkthechords.ru/mumij-troll-utekaj
+Redirect 301 /kino-poprobuj-spet-vmeste-so-mnoj/ https://checkthechords.ru/kino-poprobuj-spet-vmeste-so-mnoj
+Redirect 301 /kino-legenda/ https://checkthechords.ru/kino-legenda
+Redirect 301 /sektor-gaza-tvoj-zvonok/ https://checkthechords.ru/sektor-gaza-tvoj-zvonok
+Redirect 301 /sektor-gaza-pora-domoj/ https://checkthechords.ru/sektor-gaza-pora-domoj
+Redirect 301 /sektor-gaza-vecherom-na-lavochke/ https://checkthechords.ru/sektor-gaza-vecherom-na-lavochke
+Redirect 301 /noize-mc-bassejn/ https://checkthechords.ru/noize-mc-bassejn
+Redirect 301 /akkordy-oxxxymiron-hitinovyj-pokrov/ https://checkthechords.ru/oxxxymiron-hitinovij-pokrov
+Redirect 301 /kino-pechal/ https://checkthechords.ru/kino-pechal
+Redirect 301 /sektor-gaza-lirika/ https://checkthechords.ru/sektor-gaza-lirika
+Redirect 301 /kino-zhizn-v-steklah/ https://checkthechords.ru/kino-zhizn-v-steklah
+Redirect 301 /sektor-gaza-bomzh/ https://checkthechords.ru/sektor-gaza-bomzh
+Redirect 301 /kino-leto/ https://checkthechords.ru/kino-leto
+Redirect 301 /kino-stan-pticej/ https://checkthechords.ru/kino-stan-pticej
+Redirect 301 /kino-igra/ https://checkthechords.ru/kino-igra
+Redirect 301 /kino-bezdelnik-2/ https://checkthechords.ru/kino-bezdelnik-2
+Redirect 301 /kino-trollejbus/ https://checkthechords.ru/kino-trollejbus
+Redirect 301 /anacondaz-chego-radi/ https://checkthechords.ru/anacondaz-chego-radi
+Redirect 301 /mumij-troll-nevesta/ https://checkthechords.ru/mumij-troll-nevesta
+Redirect 301 /feduk-btl/ https://checkthechords.ru/feduk-btl
+Redirect 301 /mumij-troll-devochka/ https://checkthechords.ru/mumij-troll-devochka
+Redirect 301 /kino-general/ https://checkthechords.ru/kino-general
+Redirect 301 /kino-prohozhij/ https://checkthechords.ru/kino-prohozhij
+Redirect 301 /mumij-troll-medvedica/ https://checkthechords.ru/mumij-troll-medvedica
+Redirect 301 /sektor-gaza-30-let/ https://checkthechords.ru/sektor-gaza-30-let
