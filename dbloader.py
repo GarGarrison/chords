@@ -89,10 +89,10 @@ def insert_artist(jsondata, *args):
     db.insert_artist(jsondata)
 
 if __name__ == '__main__':
-    # insert_artist()
-    # insert_song()
+    insert_artist()
+    insert_song()
 
-    read_old()
+    # read_old()
 
 
 
