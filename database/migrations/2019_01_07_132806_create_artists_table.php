@@ -19,6 +19,9 @@ class CreateArtistsTable extends Migration
             $table->string('url')->unique();
             $table->string('letter', 3);
             $table->string('avatar')->nullable();
+            $table->text('seo_title')->nullable();
+            $table->text('seo_description')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->timestamps();
         });
     }

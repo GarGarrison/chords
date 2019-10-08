@@ -11,7 +11,11 @@
 @else
   <meta name="Description" content="Играйте песню {{ $song->song_name }} группы {{ $song->artist_name }} под правильные аккорды, которыми славится Check the Chords"/>
 @endif
-<meta name="Keywords" content="{{ $song->artist_name }},{{ $song->song_name }},аккорды для гитары, текст песни"/>
+@if($song->seo_keywords)
+  <meta name="Keywords" content="{{ $song->seo_keywords }}"/>
+@else
+  <meta name="Keywords" content="{{ $song->artist_name }},{{ $song->song_name }},аккорды для гитары, текст песни"/>
+@endif
 @endsection
 
 @section('content')

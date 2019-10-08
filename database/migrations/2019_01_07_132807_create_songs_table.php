@@ -24,6 +24,7 @@ class CreateSongsTable extends Migration
             $table->string('chords')->nullable();
             $table->text('seo_title')->nullable();
             $table->text('seo_description')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->integer('view')->default(0);
             $table->timestamps();
 

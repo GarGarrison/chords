@@ -1,9 +1,22 @@
 @extends('app')
 
 @section('meta')
-<title>{{ $artist->artist_name }} - аккорды для гитары, текст песен</title>
-<meta name="Keywords" content="{{ $artist->artist_name }}, аккорды для гитары, текст песен"/>
-<meta name="Description" content="{{ $artist->artist_name }} - аккорды для гитары, текст песен"/>
+
+@if($artist->seo_title)
+  <title>{{ $artist->seo_title }}</title>
+@else
+  <title>{{ $artist->artist_name }} - аккорды для гитары, текст песен</title>
+@endif
+@if($artist->seo_description)
+  <meta name="Description" content="{{ $artist->seo_description }}"/>
+@else
+  <meta name="Description" content="{{ $artist->artist_name }} - аккорды для гитары, текст песен"/>
+@endif
+@if($artist->seo_keywords)
+  <meta name="Keywords" content="{{ $artist->seo_keywords }}"/>
+@else
+    <meta name="Keywords" content="{{ $artist->artist_name }}, аккорды для гитары, текст песен"/>
+@endif
 @endsection
 
 @section('content')
