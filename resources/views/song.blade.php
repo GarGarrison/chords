@@ -32,7 +32,9 @@
         @if($song->guitar_chords)
         <div class="chords_block">
           @foreach ( explode(";", $song->guitar_chords) as $chord)
+            @if( file_exists("img/chords/guitar/{$chord}.gif") )
             <img src='{{ "/img/chords/guitar/{$chord}.gif" }}' />
+            @endif
           @endforeach
         </div>
         @endif
