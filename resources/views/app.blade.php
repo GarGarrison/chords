@@ -9,7 +9,7 @@
         <meta name="Description" content="Тексты песен, аккорды для гитары"/>
         @show
         <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/libs/iconfont/material-icons.css" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
         @include('vendor.vendorjs')
     </head>
