@@ -19,6 +19,7 @@
 @endsection
 
 @section('content')
+  <div class="col s12">
     <div class="block bottom song">
         <div class="bread">
           <a href='{{ "/artist/{$artist->url}" }}'><i class="material-icons left">undo</i>назад к «{{ $artist->artist_name }}»</a>
@@ -31,4 +32,5 @@
         {!! $song->chords_txt !!}
         </pre>
     </div>
+  </div>
 @endsection

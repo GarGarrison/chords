@@ -103,9 +103,9 @@
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="content">
-                    @yield('content')
+            <div class="row content">
+                @yield('content')
+                <div class="col s12">
                     <div class="footer"><div class="grey-text text-lighten-1" align="center">© 2017–<?php echo date('Y')?>&nbsp; CheckTheChords.ru</div></div>
                 </div>
             </div>
