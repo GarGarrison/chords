@@ -97,9 +97,11 @@
                 </div>
             </div>
             <div class="row">
-                <form class="search" action="/search">
-                    <input class="browser-default" type="text" name="search" placeholder="Поиск">
-                </form>
+                <div class="col s12">
+                    <form class="search" action="/search">
+                        <input class="browser-default" type="text" name="search" placeholder="Поиск...">
+                    </form>
+                </div>
             </div>
             <div class="row">
                 <div class="content">
