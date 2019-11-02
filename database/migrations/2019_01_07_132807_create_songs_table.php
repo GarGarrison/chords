@@ -21,7 +21,8 @@ class CreateSongsTable extends Migration
             $table->text('chords_txt');
             $table->string('url')->unique();
             $table->text('video')->nullable();
-            $table->string('chords')->nullable();
+            $table->string('guitar_chords')->nullable();
+            $table->string('ukulele_chords')->nullable();
             $table->text('seo_title')->nullable();
             $table->text('seo_description')->nullable();
             $table->text('seo_keywords')->nullable();

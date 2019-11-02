@@ -16,7 +16,7 @@
     <body>
         <div class="container">
             <div class="row head">
-                <div class="col m12 l4">
+                <div class="col m12 l4 logo">
                     <a href="/" class="title">CheckTheChords.ru</a>
                 </div>
                 <!-- <div class="col s12 l6 auth">
@@ -109,20 +109,6 @@
                     <div class="footer"><div class="grey-text text-lighten-1" align="center">© 2017–<?php echo date('Y')?>&nbsp; CheckTheChords.ru</div></div>
                 </div>
             </div>
-            <!-- <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div> -->
         </div>
     </body>
 </html>

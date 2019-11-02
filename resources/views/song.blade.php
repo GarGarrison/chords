@@ -28,6 +28,14 @@
         @if($song->video)
         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $song->video }}?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
         @endif
+
+        @if($song->guitar_chords)
+        <div class="chords_block">
+          @foreach ( explode(";", $song->guitar_chords) as $chord)
+            <img src='{{ "/img/chords/guitar/{$chord}.gif" }}' />
+          @endforeach
+        </div>
+        @endif
         <pre>
         {!! $song->chords_txt !!}
         </pre>
