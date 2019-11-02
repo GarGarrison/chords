@@ -128,16 +128,18 @@ pre {
     display: block;
     width: 100%;
     color: #e5e5e5;
+    opacity: 0.95;
     font-size: 1.1rem;
     padding: 0.7rem 1.7rem;
     border: none;
     border-radius: 3px;
-    background: -moz-linear-gradient(top, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%);
+    background: #7b532f;
+    /* background: -moz-linear-gradient(top, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(182,141,76,0.95)), color-stop(0%, rgba(99,64,30,1)), color-stop(0%, rgba(77,43,38,1)), color-stop(0%, rgba(121,85,72,1)), color-stop(100%, rgba(71,55,49,1)));
     background: -webkit-linear-gradient(top, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,1) 100%);
     background: -o-linear-gradient(top, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%);
     background: -ms-linear-gradient(top, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%);
-    background: linear-gradient(to bottom, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%);
+    background: linear-gradient(to bottom, rgba(182,141,76,0.95) 0%, rgba(99,64,30,0.95) 0%, rgba(77,43,38,0.95) 0%, rgba(121,85,72,0.95) 0%, rgba(71,55,49,0.95) 100%); */
 
     -webkit-box-shadow: -1px 1px 16px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 1px 16px -1px rgba(0,0,0,0.75);
@@ -162,6 +164,7 @@ pre {
 
 .letters {
     width: 100%;
+    margin-top: 1rem;
     display: inline-block;
     text-align: center;
 }
