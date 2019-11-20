@@ -35,7 +35,8 @@ class MainController extends Controller
         $artist = Artist::find($song->artist_id);
         $song->view += 1;
         $song->save();
-        return view('song', ["artist"=>$artist, "song"=>$song]);
+        $other_song = Song::where("artist_id", $artist->id)->inRandomOrder()->limit(5)->get();
+        return view('song', ["artist"=>$artist, "song"=>$song, "other_songs"=>$other_song]);
     }
 
     public function letter(Request $request, $letter) {

@@ -41,6 +41,16 @@
         <pre>
         {!! $song->chords_txt !!}
         </pre>
+
+        @if($other_songs)
+          <h2>Другие песни исполнителя:</h2>
+          <ul>
+          @foreach ($other_songs as $os)
+          <li><a href="{{$os->url}}">{{ $os->artist_name }} - {{ $os->song_name }}</a></li>
+          @endforeach
+          </ul>
+        @endif
+        {{-- comments --}}
         <div id="wpac-comment"></div>
         <script type="text/javascript">
         wpac_init = window.wpac_init || [];
@@ -56,6 +66,7 @@
         })();
         </script>
         {{-- <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a> --}}
+        {{-- end of comments --}}
     </div>
   </div>
 @endsection
