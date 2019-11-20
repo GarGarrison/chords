@@ -41,6 +41,21 @@
         <pre>
         {!! $song->chords_txt !!}
         </pre>
+        <div id="wpac-comment"></div>
+        <script type="text/javascript">
+        wpac_init = window.wpac_init || [];
+        wpac_init.push({widget: 'Comment', id: 21090});
+        (function() {
+            if ('WIDGETPACK_LOADED' in window) return;
+            WIDGETPACK_LOADED = true;
+            var mc = document.createElement('script');
+            mc.type = 'text/javascript';
+            mc.async = true;
+            mc.src = 'https://embed.widgetpack.com/widget.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+        })();
+        </script>
+        {{-- <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a> --}}
     </div>
   </div>
 @endsection
