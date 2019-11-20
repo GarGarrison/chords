@@ -20,6 +20,7 @@ Route::get('/', 'MainController@index');
 Route::get('/news', 'MainController@news');
 Route::get('/popular', 'MainController@popular');
 Route::get('/search', 'MainController@search');
+// Route::get('/test', 'MainController@test');
 Route::get('/artist/{artist}', 'MainController@artist');
 Route::get('/letter/{letter}', 'MainController@letter');
 
