@@ -25,8 +25,8 @@
           <a href='{{ "/artist/{$artist->url}" }}'><i class="material-icons left">undo</i>назад к «{{ $artist->artist_name }}»</a>
         </div>
         <h1>{{ $song->artist_name }} - {{ $song->song_name }}</h1>
-        @if($song->video)
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $song->video }}?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        @if($song->guitar_video)
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $song->guitar_video }}?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
         @endif
 
         @if($song->guitar_chords)
@@ -41,6 +41,10 @@
         <pre>
         {!! $song->chords_txt !!}
         </pre>
+
+        @if($song->ukulele_video)
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $song->ukulele_video }}?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        @endif
 
         @if($other_songs)
           <h2>Другие песни исполнителя:</h2>
@@ -63,6 +67,8 @@
             mc.async = true;
             mc.src = 'https://embed.widgetpack.com/widget.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+            console.log(mc)
+            document.querySelectorAll(".wp-copyright").forEach(el => el.remove());
         })();
         </script>
         {{-- <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a> --}}
