@@ -8,12 +8,14 @@ import warnings
 import re
 from dbapi import DBApi
 
-# OLD_LINKS = "/home/garrison/Cloud/work/chords/util/export-post-2019-01-12_19-48-44.csv"
-OLD_ARTIST = "/home/garrison/Cloud/work/chords/util/check-chords-art+song.csv"
-OLD_CONTENT = "/home/garrison/Cloud/work/chords/util/URL-content.csv"
+BASE=os.getcwd()
 
-IN_DIR = '/home/garrison/Cloud/work/chords/util/data_to_load'
-OUT_DIR = '/home/garrison/Cloud/work/chords/util/data_in_db'
+# OLD_LINKS = "/home/garrison/Cloud/work/chords/util/export-post-2019-01-12_19-48-44.csv"
+OLD_ARTIST = os.path.join(BASE, "util/check-chords-art+song.csv")
+OLD_CONTENT = os.path.join(BASE, "util/URL-content.csv")
+
+IN_DIR = os.path.join(BASE, "util/data_to_load")
+OUT_DIR = os.path.join(BASE, "util/data_in_db")
 
 # db = DBApi()
 db = DBApi()
@@ -55,21 +57,21 @@ def read_file(fname):
 
 def read_chords(func):
     def wrapper():
-            i = 0
+        i = 0
 
-            # to test parsing
-            for dirname in os.listdir(IN_DIR):
-                for fname in os.listdir(os.path.join(IN_DIR, dirname)):
-                    fpath = os.path.join(os.path.join(IN_DIR, dirname), fname)
-                    try:
-                        jsondata = read_file(fpath)
-                        func(jsondata, dirname, fname, fpath)
-                    except Exception as e:
-                        print(fpath)
-                        raise
-                    i += 1
-                    if i % 1000 == 0:
-                        print('Files processed: %s' % i)
+        # to test parsing
+        for dirname in os.listdir(IN_DIR):
+            for fname in os.listdir(os.path.join(IN_DIR, dirname)):
+                fpath = os.path.join(os.path.join(IN_DIR, dirname), fname)
+                try:
+                    jsondata = read_file(fpath)
+                    func(jsondata, dirname, fname, fpath)
+                except Exception as e:
+                    print(fpath)
+                    raise
+                i += 1
+                if i % 1000 == 0:
+                    print('Files processed: %s' % i)
     return wrapper
 
 @read_chords
