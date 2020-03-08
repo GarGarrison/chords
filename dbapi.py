@@ -162,7 +162,7 @@ class DBApi(object):
         if not chords_txt: raise BaseException("empty chords_txt!")
         if not artist_name: raise BaseException("empty artist_name!")
         data["url"] = self._get_song_url(artist_name, song_name)
-        data["guitar_chords"] = ";".join(guitar_chords)
+        data["guitar_chords"] = ";".join(guitar_chords).replace("#", "w")
         data["artist_id"] = self._artist_id_by_name(artist_name)
         data["created_at"] = self._get_now()
         data["updated_at"] = self._get_now()

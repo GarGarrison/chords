@@ -56,4 +56,9 @@ update songs
 update songs
 	set guitar_chords = REPLACE(guitar_chords, "Gb", "F")
 
+
+
+update songs
+    set guitar_chords = REPLACE(guitar_chords, "#", "w")
+
 """
