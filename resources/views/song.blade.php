@@ -19,7 +19,6 @@
 @endsection
 
 @section('content')
-  <div class="col s12">
     <div class="block bottom song">
         <div class="bread">
           <a href='{{ "/artist/{$artist->url}" }}'><i class="material-icons left">undo</i>назад к «{{ $artist->artist_name }}»</a>
@@ -75,5 +74,4 @@
         {{-- <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a> --}}
         {{-- end of comments --}}
     </div>
-  </div>
 @endsection
