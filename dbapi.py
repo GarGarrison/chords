@@ -193,3 +193,22 @@ class DBApi(object):
             self.session.rollback()
             raise
         return True
+
+    def update_video(self):
+        videos = open("video.csv", "r").readlines()
+        for line in videos:
+            url, video = line.strip().split(",")
+            try:
+                song = self.session.query(Song).filter(Song.url == url).one()
+                song.guitar_video = video
+                self.session.commit()
+                print(song, url, video)
+            except IntegrityError as e:
+                self.session.rollback()
+                raise
+            except Exception as e:
+                self.session.rollback()
+                raise
+        return True
+            
+

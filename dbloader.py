@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'plex and gar.garrison'
 
-import os
+import os, sys
 import json
 import pandas
 import warnings
@@ -91,8 +91,11 @@ def insert_artist(jsondata, *args):
     db.insert_artist(jsondata)
 
 if __name__ == '__main__':
-    insert_artist()
-    insert_song()
+    if sys.argv[1] == "video":
+        db.update_video()
+    else:
+        insert_artist()
+        insert_song()
 
     # read_old()
 
