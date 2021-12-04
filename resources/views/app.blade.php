@@ -11,15 +11,19 @@
         <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
         <link href="/libs/iconfont/material-icons.css" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="{{ asset('favicon4.ico') }}"  type='image/x-icon'>
         @include('vendor.vendorjs')
     </head>
     <body>
         <div class="row head container">
 
-            <div class="col m12 l4 logo">
-                <a href="/" class="title">CheckTheChords.ru</a>
-            </div>
-            <div class="col m12 l8 letters">
+            <a href="/" class="col s12 l5 logo">
+                <div class="logo-wrapper">
+                    <img class="logo-img" src="/img/logo21.png">
+                    <span  class="logo-title">CheckTheChords.ru</span>
+                </div>
+            </a>
+            <div class="col s12 l7 letters">
                 <div>
                     <a href="/letter/A">A</a><a href="/letter/B">B</a><a href="/letter/C">C</a><a href="/letter/D">D</a><a href="/letter/E">E</a>
                     <a href="/letter/F">F</a><a href="/letter/G">G</a><a href="/letter/H">H</a><a href="/letter/I">I</a><a href="/letter/J">J</a>
