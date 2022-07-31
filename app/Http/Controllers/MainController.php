@@ -26,7 +26,7 @@ class MainController extends Controller
     public function search(Request $request) {
         $req = $request->input('search');
         $lower = strtolower($req);
-        $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', song_name)) like '%{$lower}%'")->paginate(20);
+        $results = Song::whereRaw("LOWER(CONCAT(artist_name, ' ', song_name)) like '%{$lower}%'")->paginate(20)->withPath("search?search=$req");
         return view('search', ["results"=>$results, "request"=>$req]);
     }
 
