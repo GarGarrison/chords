@@ -24,6 +24,6 @@ Route::get('/search', 'MainController@search');
 Route::get('/artist/{artist}', 'MainController@artist');
 Route::get('/letter/{letter}', 'MainController@letter');
 
-Route::get('/ololo', 'AdminController@admin');
+// Route::get('/ololo', 'AdminController@admin');
 
 Route::get('/{song}', 'MainController@song');

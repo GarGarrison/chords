@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 __author__ = 'plex and gar.garrison'
 
-import os, sys
-import json
+import os, sys, json, datetime
 import pandas
 import warnings
 import re
 from dbapi import DBApi
+
+print(datetime.datetime.now())
 
 BASE=os.getcwd()
 
@@ -91,8 +92,11 @@ def insert_artist(jsondata, *args):
     db.insert_artist(jsondata)
 
 if __name__ == '__main__':
-    if sys.argv[1] == "video":
+    if len(sys.argv) > 1 and sys.argv[1] == "video":
         db.update_video()
+
+    if len(sys.argv) > 1 and sys.argv[1] == "delete":
+        db.delete_songs()
     else:
         insert_artist()
         insert_song()

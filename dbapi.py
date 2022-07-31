@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'gar.garrison'
 
-import MySQLdb
 import datetime, re
 from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, create_engine
 from sqlalchemy.orm import sessionmaker
@@ -68,7 +67,7 @@ class DBApi(object):
         guitar_chords
     """
 
-    db_location = "mysql://{}:{}@{}/{}?charset=utf8".format(username, password, host, database)
+    db_location = "mysql+pymysql://{}:{}@{}/{}?charset=utf8".format(username, password, host, database)
     session = None
     engine = None
     def __init__(self):
@@ -197,9 +196,14 @@ class DBApi(object):
     def update_video(self):
         videos = open("video.csv", "r").readlines()
         for line in videos:
+            line = line.replace("https://checkthechords.ru/", "")
+            line = line.replace("    ", ",")
+            line = line.replace("   ", ",")
+            line = line.replace("  ", ",")
+            line = line.replace(" ", ",")
             url, video = line.strip().split(",")
             try:
-                song = self.session.query(Song).filter(Song.url == url).one()
+                song = self.session.query(Song).filter(Song.url == url).first()
                 song.guitar_video = video
                 self.session.commit()
                 print(song, url, video)
@@ -210,5 +214,22 @@ class DBApi(object):
                 self.session.rollback()
                 raise
         return True
-            
+    
+    def delete_songs(self):
+        songs = open("songs_to_delete.csv", "r").readlines()
+        for line in songs:
+            url = line.strip()
+            try:
+                song = self.session.query(Song).filter(Song.url == url).first()
+                if song:
+                    self.session.delete(song)
+                    self.session.commit()
+                    print("Удалено:", song, url)
+            except IntegrityError as e:
+                self.session.rollback()
+                raise
+            except Exception as e:
+                self.session.rollback()
+                raise
+        return True
 

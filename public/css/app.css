@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 
 body {
-    color: #e5e5e5;
     font-family: 'Roboto', serif;
     height: 100vh;
     overflow-y: scroll;
     padding: 0px;
     margin: 0px;
     color: #333;
-    background: rgba(229, 229, 229, 0.88);
+    --background: rgba(229, 229, 229, 0.88);
+    background-color: #ddd;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Roboto Slab', serif;
