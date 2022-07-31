@@ -11,7 +11,7 @@
         <link href="/libs/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
         <link href="/libs/iconfont/material-icons.css" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
-        <link rel="shortcut icon" href="{{ asset('favicon4.ico') }}"  type='image/x-icon'>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"  type='image/x-icon'>
         @include('vendor.vendorjs')
     </head>
     <body>
