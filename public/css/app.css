@@ -145,6 +145,9 @@ pre {
 .song b {
     color: #795548;
 }
+.song pre {
+    line-height: 15px;
+}
 
 .chords_block img {
     margin: 1rem;
