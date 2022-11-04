@@ -23,6 +23,9 @@
     <div class="col s12">
         <div class="block bottom">
             <h1>{{ $artist->artist_name }}</h1>
+            @if($artist->description)
+                <p>{{ $artist->description }}</p>
+            @endif
             @if(count($songs))
                 <table>
                     <tr>

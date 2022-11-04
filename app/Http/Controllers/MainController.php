@@ -56,15 +56,4 @@ class MainController extends Controller
         $songs = Song::where('artist_id', $artist->id)->orderBY("song_name")->paginate(50);
         return view('artist', ["songs"=>$songs, "artist"=>$artist]);
     }
-    // public function test(Request $request) {
-    //     $songs = Song::where('chords_txt', 'like', '%<h2>%')->get();
-    //     dd($songs);
-    //     foreach ($songs as $song) {
-    //         $chords = preg_replace('/<h2>.+?<\/h2>/', '', $song->chords_txt);
-    //         $chords = preg_replace('/<ul>.+?<\/ul>/', '', $chords);
-    //         $song->chords_txt = $chords;
-    //         $song->save();
-    //     }
-    //     return "ok";
-    // }
 }
