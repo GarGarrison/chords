@@ -139,6 +139,12 @@ pre {
     margin: 30px 0px;
 }
 
+.avatar {
+    max-width: 6rem !important;
+    float: left;
+    margin: 1.5rem;
+}
+
 .song {
     overflow-x: auto;
 }

@@ -22,7 +22,14 @@
 @section('content')
     <div class="col s12">
         <div class="block bottom">
-            <h1>{{ $artist->artist_name }}</h1>
+            <div class="artist-header valign-wrapper">
+                @if($artist->avatar)
+                    <img class="circle responsive-img avatar" src="/img/avatar/{{$artist->avatar}}" />
+                @endif
+                <h1>
+                    {{ $artist->artist_name }}
+                </h1>
+            </div>
             @if($artist->description)
                 <p>{{ $artist->description }}</p>
             @endif
@@ -36,7 +43,7 @@
                 @foreach($songs as $song)
                     <tr>
                         <td></td><!-- ava -->
-                        <td><a href='{{"/{$song->url}" }}'>{{ $song->song_name }}</a></td>
+                        <td><a href='{{"/$song->url" }}'>{{ $song->song_name }}</a></td>
                         <td>{{ $song->view }}</td>
                     </tr>
                 @endforeach
